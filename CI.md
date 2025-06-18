@@ -21,14 +21,23 @@ jobs:
         python-version: ["3.12"]
         platform:
           - runner: ubuntu-22.04
-            target: x86_64-unknown-linux-gnu
+            target: x86_64
+          - runner: ubuntu-22.04
+            target: x86
+          - runner: ubuntu-22.04
+            target: aarch64
+          - runner: ubuntu-22.04
+            target: armv7
+          - runner: ubuntu-22.04
+            target: s390x
+          - runner: ubuntu-22.04
+            target: ppc64le
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y pkg-config libssl-dev build-essential curl cmake
-          rustup target add x86_64-unknown-linux-gnu
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -36,13 +45,11 @@ jobs:
         uses: PyO3/maturin-action@v1
         env:
           RUSTFLAGS: '-C target-feature=+crt-static'
-          CARGO_NET_GIT_FETCH_WITH_CLI: true
         with:
-          target: x86_64-unknown-linux-gnu
+          target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter --verbose
           sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
-          manylinux: manylinux2014
-          container: quay.io/pypa/manylinux2014_x86_64
+          manylinux: 2014
       - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
