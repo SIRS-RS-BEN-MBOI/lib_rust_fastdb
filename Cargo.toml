@@ -8,6 +8,10 @@ edition = "2021"
 name = "rust_fastdb"
 crate-type = ["cdylib"]
 
+[package.metadata.maturin]
+python-source = "python"
+requires-python = ">=3.8"
+
 [dependencies]
 pyo3 = { version = "0.20.3", features = ["extension-module"] }
 pyo3-asyncio = { version = "0.20", features = ["tokio-runtime"] }
