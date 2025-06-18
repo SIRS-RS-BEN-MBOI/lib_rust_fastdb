@@ -25,11 +25,14 @@ jobs:
 
     - name: Set up Rust
       uses: dtolnay/rust-toolchain@stable
+      with:
+        profile: minimal
+    
 
     - name: Build wheels
       uses: PyO3/maturin-action@v1
       with:
-        manylinux: 2014
+        manylinux: manylinux_2_28
         args: --release --out dist --interpreter python${{ matrix.python-version }}
 
     - name: Upload wheels
