@@ -11,7 +11,21 @@ permissions:
   contents: read
 
 jobs:
+  extract-project-name:
+    name: Extract project name
+    runs-on: ubuntu-latest
+    outputs:
+      project_name: ${{ steps.extract.outputs.name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract project name from pyproject.toml
+        id: extract
+        run: |
+          NAME=$(grep -E '^name\s*=' pyproject.toml | head -n1 | cut -d '"' -f2)
+          echo "name=$NAME" >> $GITHUB_OUTPUT
   linux:
+    needs: extract-project-name
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -25,7 +39,8 @@ jobs:
             target: aarch64
           - runner: ubuntu-22.04
             target: armv7
-
+    env:
+      PROJECT_NAME: ${{ needs.extract-project-name.outputs.project_name }}
     steps:
     - uses: actions/checkout@v4
 
