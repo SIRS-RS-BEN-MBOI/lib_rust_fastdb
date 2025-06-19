@@ -41,6 +41,7 @@ MIT License
 
 ## 🧪 Example
 ```bash
+  db_url = "postgres://<username>:<password>@<host>:<port>/<database>" //you can use env
   user_data = await rust_fastdb.run_manual_query_with_params(
             db_url,
             "SELECT id::text AS id, fullname FROM users;",
