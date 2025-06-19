@@ -39,5 +39,12 @@ MIT License
 
 ---
 
-## 🧪 Example (coming soon)
-Stay tuned for usage examples!
+## 🧪 Example
+```bash
+  user_data = await rust_fastdb.run_manual_query_with_params(
+            db_url,
+            "SELECT id::text AS id, fullname FROM users;",
+            [],      # Leave empty if no ? parameters
+            False    # use_cache 
+        )
+```
