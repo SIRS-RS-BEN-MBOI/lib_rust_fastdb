@@ -20,8 +20,12 @@
 pip install rust_fastdb
 ```
 
+---
+
 ## 📄 License
 MIT License
+
+---
 
 ## 📝 Changelog
 v0.1.0
@@ -32,6 +36,7 @@ v0.1.0
       - MySQL
       - SQLite
 
+---
 
 ## 🧪 Example (coming soon)
 Stay tuned for usage examples!
