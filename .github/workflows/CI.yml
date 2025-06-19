@@ -35,7 +35,7 @@ jobs:
     - name: Set up Rust
       uses: dtolnay/rust-toolchain@stable
       with:
-        profile: minimal
+        toolchain: stable
     
     - name: Install OpenSSL dependencies
       run: |
@@ -96,13 +96,8 @@ jobs:
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          profile: minimal
+          toolchain: stable
 
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          profile: minimal
-      
       - name: Install OpenSSL dependencies
         run: |
           sudo apt-get update
