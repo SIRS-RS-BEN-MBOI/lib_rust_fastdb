@@ -36,12 +36,21 @@ pip install rust_fastdb
 
 - ✅ **Initial Release**
 - 🔄 Added support for querying data from databases
+- 📥 Currently supports only **reading (GET)** data from databases
 - 💽 Supported databases:
   - PostgreSQL
   - MySQL
   - SQLite
+- 📊 Query result formatting (e.g., JSON, dicts)
 
 ---
+
+### 🛣️ Coming Soon
+- ✏️ Support for `INSERT`, `UPDATE`, and `DELETE` operations
+- 🛡️ Built-in connection pooling for better performance
+- 🧪 More unit tests and async performance benchmarks
+- 📚 Improved documentation and usage examples
+
 
 ## 🧪 Example
 ```bash
