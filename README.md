@@ -22,8 +22,12 @@ pip install rust_fastdb
 
 ---
 
-## 📄 License
-MIT License
+## 📦 For Customation (Comming Soon)
+ - Clone This Repository to your local machine
+ - Makesure you already install rust dan python
+ - Recomended to run using Virtual Environment 
+ 
+
 
 ---
 
