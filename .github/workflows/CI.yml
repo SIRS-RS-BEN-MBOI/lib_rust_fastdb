@@ -6,7 +6,7 @@ on:
       - main
       - master
     tags:
-      - 'v0.1.0'
+      - 'v*'
   pull_request:
   workflow_dispatch:
 
