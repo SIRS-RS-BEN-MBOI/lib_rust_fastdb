@@ -28,13 +28,14 @@ MIT License
 ---
 
 ## 📝 Changelog
-v0.1.0
-  ✅ Initial release
-  🔄 Get data from database
-  💽 Support for:
-      - PostgreSQL
-      - MySQL
-      - SQLite
+### v0.1.0
+
+- ✅ **Initial Release**
+- 🔄 Added support for querying data from databases
+- 💽 Supported databases:
+  - PostgreSQL
+  - MySQL
+  - SQLite
 
 ---
 
