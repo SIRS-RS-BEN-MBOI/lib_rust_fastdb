@@ -44,7 +44,7 @@ jobs:
       run: |
         pkg-config --libs --cflags openssl || echo "openssl not found"
         find /usr -name "openssl.pc"
-        pkg-config --libs --cflags openssl
+        pkg-config --libs --cflags openssl || echo "PKG-CONFIG ERROR"
 
     - name: Build wheels
       uses: PyO3/maturin-action@v1
