@@ -18,11 +18,12 @@
 
 ```bash
 pip install rust_fastdb
+```
 
-📄 License
+## 📄 License
 MIT License
 
-📝 Changelog
+## 📝 Changelog
 v0.1.0
   ✅ Initial release
   🔄 Get data from database
@@ -32,5 +33,5 @@ v0.1.0
       - SQLite
 
 
-🧪 Example (coming soon)
+## 🧪 Example (coming soon)
 Stay tuned for usage examples!
